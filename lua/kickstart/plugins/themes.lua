@@ -1,5 +1,6 @@
 return {
   'rebelot/kanagawa.nvim',
+  { 'ellisonleao/gruvbox.nvim', priority = 1000, config = true },
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
