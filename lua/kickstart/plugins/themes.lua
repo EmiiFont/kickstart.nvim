@@ -18,4 +18,6 @@ return {
       vim.cmd.hi 'Comment gui=none'
     end,
   },
+  { 'rose-pine/neovim', name = 'rose-pine' },
+  { 'rmehri01/onenord.nvim', name = 'onenord' },
 }
