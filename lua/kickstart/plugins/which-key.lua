@@ -49,6 +49,7 @@ return {
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<leader>W', group = 'Word-[W]rap', mode = { 'n', 'v' } },
       },
     },
   },

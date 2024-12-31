@@ -32,6 +32,40 @@ require 'lazy-plugin'
 vim.o.background = 'dark' -- or "light" for light mode
 
 vim.cmd.colorscheme 'catppuccin-macchiato'
+vim.o.linebreak = true
+
+local function configure_wrap_navigation()
+  if vim.wo.wrap then
+    -- Map navigation for wrapped lines
+    vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '^', 'g^', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '$', 'g$', { noremap = true, silent = true })
+  else
+    -- Reset to default navigation
+    vim.api.nvim_set_keymap('n', 'j', 'j', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', 'k', 'k', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '^', '^', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '$', '$', { noremap = true, silent = true })
+  end
+end
+
+local function toggle_wrap()
+  vim.wo.wrap = not vim.wo.wrap
+  configure_wrap_navigation()
+end
+
+-- Map <leader>W to toggle word wrap and configure navigation
+vim.keymap.set('n', '<leader>W', toggle_wrap, { noremap = true, silent = true })
+
+-- Automatically run the function when the wrap option changes
+vim.api.nvim_create_autocmd('OptionSet', {
+  pattern = 'wrap',
+  callback = configure_wrap_navigation,
+})
+
+-- Run the function once on startup
+configure_wrap_navigation()
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
