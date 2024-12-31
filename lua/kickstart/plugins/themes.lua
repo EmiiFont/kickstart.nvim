@@ -20,4 +20,6 @@ return {
   },
   { 'rose-pine/neovim', name = 'rose-pine' },
   { 'rmehri01/onenord.nvim', name = 'onenord' },
+  { 'navarasu/onedark.nvim', name = 'onedark' },
+  { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
 }

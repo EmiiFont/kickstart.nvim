@@ -30,7 +30,8 @@ require 'keymaps'
 require 'lazy-plugin'
 
 vim.o.background = 'dark' -- or "light" for light mode
-vim.cmd [[colorscheme onenord]]
+
+vim.cmd.colorscheme 'catppuccin-macchiato'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
