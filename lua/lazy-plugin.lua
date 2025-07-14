@@ -54,7 +54,7 @@ require('lazy').setup({
 
   -- LSP Plugins
   require 'kickstart.plugins.lsp-config',
-  require 'kickstart.plugins.conform',
+  -- require 'kickstart.plugins.conform',
   require 'kickstart.plugins.autocomplete',
   require 'kickstart.plugins.git-browse',
   require 'kickstart.plugins.comments',

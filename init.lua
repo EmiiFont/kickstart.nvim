@@ -67,5 +67,13 @@ vim.api.nvim_create_autocmd('OptionSet', {
 -- Run the function once on startup
 configure_wrap_navigation()
 
+-- require('conform').setup {
+--   format_on_save = function(bufnr)
+--     if vim.g.disable_autoformat then
+--       return
+--     end
+--     return { timeout_ms = 500, lsp_format = 'fallback' }
+--   end,
+-- }
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
